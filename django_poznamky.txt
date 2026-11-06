@@ -1,0 +1,59 @@
+1. Inštalácia django do python
+	pip install django
+	pip list do príkazového riadku
+	
+C:\Users\makkyl24>pip list
+Package  Version
+-------- -------
+asgiref  3.11.1
+Django   6.0.6
+pip      26.1.2
+sqlparse 0.5.5
+tzdata   2026.2
+
+2. Vytvorenie projektu:
+	django-admin startproject nazov_projektu .  
+	
+	vo vscode do terminalu
+
+3. Nastavenie slovenčiny pre projekt (nazov_projektu/settings.py)
+	otvorim priečinok vo vs -> settings -> najdem si language_code a time_zone
+
+LANGUAGE_CODE = 'sk'
+
+TIME_ZONE = 'Europe/Bratislava'
+
+4. Spustenie vývojového servera 
+	do termináu vložím
+python.exe .\manage.py runserver
+	beží na adrese http://127.0.0.1/8000
+
+5. Vytvorenie aplikácie
+	python.exe .\manage.py startapp nazov_aplikacie
+
+6. registrácia aplikácie do projektu (nazov_projektu/settings.py):
+
+INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'nazov_aplikacie',
+]
+
+7. vytvorenie jednoduchého views (nazov_aplikacie/views.py)
+
+from django.shortcuts import render, HttpResponse
+
+def index(request):
+    return HttpResponse('Hello World')
+
+8. vytvorenie url pattern
+	8.1 nazov_projektu/urls.py
+	
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('skola/', include('skola.urls'))
+]
