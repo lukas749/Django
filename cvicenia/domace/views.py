@@ -1,7 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import render, HttpResponse
 def domace(request):
     kontext = {
-        'meno': 'Lukáš',
-        'priezvisko': 'Mäkký',
+        "meno": "Lukáš",
+        "vek": 17,
+        "oblubene_predmety": ["programovanie", "matematika", "prax"],
+    
     }
-    return render(request, "domace/domace.html", kontext)
+    return render(request, "domace/vizitka.html", kontext)

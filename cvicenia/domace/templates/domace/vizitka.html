@@ -1,0 +1,15 @@
+<p>Volám sa {{meno}}</p>
+{% if vek >= 18%}
+<p>Som plnoletý/á.</p>
+{% else %}
+<p>Som neplnoletý/á a mám {{vek}} rokov.</p>
+{% endif %}
+
+<h2>Oblúbené predmety</h2>
+<ul>
+    {% for p in oblubene_predmety %}
+    <li>{{ p }}</li>
+    {% empty %}
+    <li> Žiadne obľúbené predmety </li>
+    {% endfor %}
+</ul>
