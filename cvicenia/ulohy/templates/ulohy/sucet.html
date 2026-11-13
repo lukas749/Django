@@ -1,0 +1,12 @@
+<h1> Súčet dvoch čísel </h1>
+<form method="post">
+    {% csrf_token %}
+    <label>Prvé číslo<input type = "number" name= "a" required></label>
+    <p></p>
+    <label>Druhé číslo<input type = "number" name= "b" required></label>
+    <button> Vypočítaj </button>
+</form>
+
+{% if vysledok%}
+<p> Výsledok bude {{vysledok}}</p>    
+{%endif%}

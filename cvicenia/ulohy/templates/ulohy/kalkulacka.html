@@ -1,0 +1,17 @@
+<h1> Kalkulačka </h1>
+<form method="post">
+    {% csrf_token %}
+    <label>Prvé číslo<input type = "number" name= "cislo_1" required></label>
+    <select id = "znamienko" name = "znamienko">
+    <option value="+">+</option>
+    <option value = "-">-</option>
+    <option value="*">*</option>
+    <option value=":">:</option>    
+    </select>
+    <label>Druhé číslo<input type = "number" name= "cislo_2" required></label>
+    <button> Vypočítaj </button>
+</form>
+
+{% if vysledok != None%}
+<p> Výsledok bude {{vysledok}}</p>    
+{%endif%}

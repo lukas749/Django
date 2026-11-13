@@ -1,0 +1,19 @@
+<h1> Výpočet obsahu/obvodu obdĺžnika </h1>
+<form method="post">
+    {% csrf_token %}
+    <label>Prvá strana<input type = "number" name= "strana_a" required></label>
+    <p></p>
+    <label>Druhá strana<input type = "number" name= "strana_b" required></label>
+    <select value="vyber" name="vyber">
+        <option value="obvod">Obvod</option>
+        <option value="obsah">Obsah</option>
+    </select>
+    <button> Vypočítaj </button>
+</form>
+
+{% if vysledok != None%}
+<p>
+    Vysledok bude {{vysledok}}    
+<p>
+{% endif%}
+

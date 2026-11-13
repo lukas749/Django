@@ -57,3 +57,25 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('skola/', include('skola.urls'))
 ]
+
+9. templates
+    9.1 vytvorenie template
+    - vytvoriť v priečinku aplikácie priečinok templates/nazov_aplikacie
+    - v tomto priečinku vytvoriť html súbor(napr. index.html)
+9.2 upraviť view.py tak aby používal templates
+
+
+<-- FORMULÁR
+
+<form method=="get">
+    <input type="text" name="meno">
+    <button>Odoslať</button>
+</form>
+
+-->
+
+<-- GET
+def pozdrav(request):
+     meno = request.GET.get("meno","") # .get nájde a vráti hodnotu prvku s indexom(kľúčom) meno, ak ho nenájde vloží prázdny string
+
+-->
