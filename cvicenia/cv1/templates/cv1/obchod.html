@@ -1,0 +1,21 @@
+<form method == "get">
+    <label>max. cena: <input type= "text" name = "max. cena" value = {{max_cena}}></label>
+    <button type="submit"> Odoslať </button>
+{% if chyba%} <p> {{chyba}} </p> {%endif%}
+    <table border = "1">
+    <tr><th>Názov</th><th>Cena</th></tr>
+        {%for p in produkty%}
+        <tr>
+            <td>{{ p.nazov }}</td>
+            {% if p.cena < 5%}
+            <th>{{ p.cena|floatformat:2 }}€</th>
+            {% else %}
+            <td>{{ p.cena|floatformat:2 }}€</td>
+            {%endif%}
+        </tr>
+        {%empty%}
+        <tr>
+            <td> Žiadne produkty </td>
+        </tr>
+        {%endfor%}        
+    </table>
