@@ -8,21 +8,18 @@ def domace(request):
     }
     return render(request, "domace/vizitka.html", kontext)
 
-def teplota(request):
+def du3_teplota(request):
     vysledok = None
 
     if request.method == "POST":
-        teplota = float(request.POST["teplota"])
-        hodnota = request.POST["hodnota"]
-
-        if hodnota == "fahrenheit":
-            vysledok = (teplota * 9/5) + 32
-
-        elif hodnota == "celsius":
-            vysledok = (teplota - 32) * 5/9
-
+        teplota = float(request.POST.get("teplota").replace(",", "."))
+        smer = request.POST.get("smer")
+        if smer == "CtoF":
+            vysledok = teplota * 9 / 5 + 32
+            jednotka = "°F"
         else:
-            vysledok = teplota
-
-    vysledok = round(vysledok, 1)
-    return render(request, 'teplota.html', {"vysledok": vysledok, "hodnota": hodnota})
+            vysledok = (teplota - 32) * 5 / 9
+            jednotka = "°C"
+        vysledok = f"{vysledok:.1f} {jednotka}"
+        
+    return render(request, "domace/du3_teplota.html", {"vysledok": vysledok})
