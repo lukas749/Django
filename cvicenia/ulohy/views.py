@@ -61,3 +61,9 @@ def obdlznik(request):
         else:
             vysledok = round(2*(strana_a + strana_b),2)
     return render(request, 'ulohy/obdlznik.html', {"vysledok": vysledok})
+
+
+
+def index(request):
+
+    return render(request, "ulohy/index.html")

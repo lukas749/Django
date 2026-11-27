@@ -1,3 +1,6 @@
+ {% extends "ulohy/base.html" %}
+{% block titulok%}Kalkulačka{%endblock%}
+{% block obsah %}
 <h1> Kalkulačka </h1>
 <form method="post">
     {% csrf_token %}
@@ -13,5 +16,6 @@
 </form>
 
 {% if vysledok != None%}
-<p> Výsledok bude {{vysledok}}</p>    
+<div class="alert alert-success" role="alert"> Výsledok bude {{vysledok}}</div>  
 {%endif%}
+{%endblock%}

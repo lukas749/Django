@@ -1,0 +1,14 @@
+ {% extends "ulohy/base.html" %}
+{% block titulok%}Moje cvičenia{%endblock%}
+{% block obsah %}
+    <h1>Moje cvičenia </h1>
+<ul>
+    <li><a href = "{% url 'pozdrav'%}">Pozdrav</a></li>
+    <li><a href = "{% url 'sucet'%}">Súčet</a></li>
+    <li><a href = "{% url 'obdlznik'%}">Obdĺžnik</a></li>
+    <li><a href = "{% url 'o_mne'%}">O mne</a></li>
+    <li><a href = "{% url 'kalkulacka'%}">kalkulacka</a></li>
+    <li><a href = "{% url 'rozvrh'%}">Rozvrh</a></li>
+
+</ul>
+{%endblock%}

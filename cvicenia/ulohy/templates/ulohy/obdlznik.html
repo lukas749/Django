@@ -1,3 +1,6 @@
+ {% extends "ulohy/base.html" %}
+{% block titulok%}Obdlžnik{%endblock%}
+{% block obsah %}
 <h1> Výpočet obsahu/obvodu obdĺžnika </h1>
 <form method="post">
     {% csrf_token %}
@@ -12,8 +15,6 @@
 </form>
 
 {% if vysledok != None%}
-<p>
-    Vysledok bude {{vysledok}}    
-<p>
+<div class="alert alert-success" role="alert"> Výsledok bude {{vysledok}}</div> 
 {% endif%}
-
+{%endblock%}

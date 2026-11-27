@@ -1,3 +1,6 @@
+ {% extends "ulohy/base.html" %}
+{% block titulok%}O mne{%endblock%}
+{% block obsah %}
 <h1>volám sa{{meno}}</h1>
 {% if vek >= 18%}
 <p>Som plnoletý/á.</p>
@@ -13,3 +16,4 @@
     <li> Žiadne záľuby </li>
     {% endfor %}
 </ul>
+{%endblock%}
